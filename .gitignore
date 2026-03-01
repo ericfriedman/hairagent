@@ -4,3 +4,8 @@
 DerivedData/
 .swiftpm/
 .DS_Store
+
+# Next.js landing page
+site/node_modules/
+site/.next/
+site/out/
