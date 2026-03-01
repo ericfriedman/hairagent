@@ -27,9 +27,14 @@ Hair Agent is an iPad app conceived by an 11-year-old creator and built collabor
 - **Font:** Clean, modern, highly readable
 
 ## Coding Standards
-<!-- Will be filled in as we establish patterns -->
+- Swift Package with iOS 17 + macOS 14 targets
+- Use SwiftUI-only types (no UIKit references like `Color(.systemGray6)` -- use `Color.gray.opacity(0.12)` instead)
+- Views use callback closures for navigation (no NavigationStack)
+- AppTheme enum for all colors and fonts
+- Enums use `rawValue` strings for Codable/SwiftData compatibility
 
 ## Current Status
-- **Phase:** Design complete, ready for implementation planning
-- **Last session:** 2026-03-01 - Brainstorming complete, design doc written
+- **Phase:** v1 implementation complete -- all views, models, data, and navigation built
+- **Last session:** 2026-03-01 - Built entire v1 app (15 tests passing)
 - **Design doc:** docs/plans/2026-03-01-hair-agent-design.md
+- **Implementation plan:** docs/plans/2026-03-01-hair-agent-implementation.md
