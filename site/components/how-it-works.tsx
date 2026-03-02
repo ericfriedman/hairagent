@@ -1,27 +1,32 @@
+import { Sparkle } from "./sparkle";
+
 const steps = [
   {
     number: "1",
     title: "Take a Quick Quiz",
     description: "Tell us about your hair color, texture, and goals.",
-    color: "bg-ha-pink",
+    bgColor: "bg-ha-pink",
+    sparkleColor: "#e8899a",
   },
   {
     number: "2",
     title: "Get Personalized Tips",
     description: "We match you with DIY solutions tailored to your hair.",
-    color: "bg-ha-blue",
+    bgColor: "bg-ha-blue",
+    sparkleColor: "#89b8d4",
   },
   {
     number: "3",
     title: "Make It at Home",
     description: "Every recipe uses ingredients you already have in your kitchen.",
-    color: "bg-ha-yellow",
+    bgColor: "bg-ha-yellow",
+    sparkleColor: "#d4c46e",
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section className="py-24 px-6 bg-white">
+    <section className="py-24 px-6 bg-gray-50/50">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center text-black mb-16">
           How It Works
@@ -30,17 +35,21 @@ export function HowItWorks() {
           {steps.map((step) => (
             <div
               key={step.number}
-              className="text-center p-8 rounded-3xl bg-gray-50"
+              className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden"
             >
+              {/* Colored top panel with sparkle - like the app cards */}
               <div
-                className={`inline-flex items-center justify-center w-14 h-14 rounded-full ${step.color} text-black text-2xl font-bold mb-6`}
+                className={`${step.bgColor} h-40 flex items-center justify-center relative`}
               >
-                {step.number}
+                <Sparkle className="w-12 h-12" color={step.sparkleColor} />
               </div>
-              <h3 className="text-2xl font-bold text-black mb-3">
-                {step.title}
-              </h3>
-              <p className="text-lg text-black/60">{step.description}</p>
+              {/* Text content below */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-black mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-base text-black/50">{step.description}</p>
+              </div>
             </div>
           ))}
         </div>
