@@ -16,8 +16,12 @@ struct NameEntryView: View {
                 .font(AppTheme.bodyFont(size: 22))
                 .padding()
                 .frame(maxWidth: 400)
-                .background(Color.gray.opacity(0.12))
+                .background(.white.opacity(0.9))
                 .clipShape(RoundedRectangle(cornerRadius: 12))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(AppTheme.pastelPink.opacity(0.5), lineWidth: 2)
+                )
                 .multilineTextAlignment(.center)
 
             Button(action: { onContinue(name) }) {
@@ -34,6 +38,8 @@ struct NameEntryView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(AppTheme.background)
+        .background {
+            DecorativeBackground(style: .nameEntry)
+        }
     }
 }

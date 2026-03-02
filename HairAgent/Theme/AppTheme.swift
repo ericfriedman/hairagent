@@ -6,6 +6,7 @@ enum AppTheme {
     static let pastelBlue = Color(red: 0.68, green: 0.85, blue: 0.96)
     static let pastelYellow = Color(red: 1.0, green: 0.94, blue: 0.70)
     static let pastelCoral = Color(red: 1.0, green: 0.60, blue: 0.56)
+    static let hotPink = Color(red: 1.0, green: 0.0, blue: 0.5)
     static let background = Color.white
     static let textPrimary = Color.black
 

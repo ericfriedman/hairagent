@@ -23,9 +23,11 @@ Users enter their name and take a hair quiz (color, texture, goals). The app mat
 Everyone -- kids, tweens, teens, and adults who want to learn hair care with at-home solutions.
 
 ## Design Notes
-- **Colors:** Pastel pink, blue, yellow, coral + white backgrounds + black text
+- **Colors:** Pastel pink, blue, yellow, coral, hot pink + white backgrounds + black text
 - **Vibe:** Bold, trendy, fun -- fashion-forward, not childish
-- **UI:** Large tappable cards, color circles for hair color, smooth animations
+- **UI:** Large tappable cards, smooth animations, colorful gradient backgrounds
+- **Decorations:** Floating hearts, bows, sparkles, stars, scissors on every screen
+- **Border:** Hot pink squiggly border framing every screen
 - **iPad optimized:** Uses the big screen well
 - **Full design doc:** docs/plans/2026-03-01-hair-agent-design.md
 
@@ -34,16 +36,25 @@ Everyone -- kids, tweens, teens, and adults who want to learn hair care with at-
 - SwiftData (local storage)
 - No backend
 
+## Features (v2 -- in brainstorming)
+1. Hair color gradient slider (replace card picker with draggable color bar)
+2. Before/after hair illustrations on results cards (custom-drawn hair shapes in user's color)
+3. Usage frequency recommendations per recipe (personalized by hair texture)
+
 ## Milestones
 1. [x] Project setup & GitHub repo
 2. [x] Brainstorming session - define the app concept
 3. [x] Implementation plan
 4. [x] Development (v1 -- all views, models, data, navigation)
 5. [x] Marketing landing page -- designed, built, deployed on Vercel
-6. [ ] Content creation (more hair tips, real photos)
-7. [ ] Xcode project setup & on-device testing
-8. [ ] Polish & refinement
-9. [ ] App Store launch
+6. [x] Xcode project setup & simulator testing
+7. [x] Visual polish (colorful backgrounds, decorations, squiggly border)
+8. [ ] v2 feature brainstorming & design (in progress)
+9. [ ] v2 development
+10. [ ] Content creation (more hair tips, real photos)
+11. [ ] On-device testing
+12. [ ] Final polish & refinement
+13. [ ] App Store launch
 
 ## Session Log
 | Date | What We Did |
@@ -52,3 +63,4 @@ Everyone -- kids, tweens, teens, and adults who want to learn hair care with at-
 | 2026-03-01 | Brainstorming complete -- defined app concept, chose SwiftUI, designed flow, locked in colors, wrote design doc |
 | 2026-03-01 | Built entire v1! 11 tasks, 15 tests passing. All screens working: welcome, name entry, 3-step quiz, results with 8 solutions, tip detail view |
 | 2026-03-01 | Built marketing landing page (Next.js + Tailwind + shadcn/ui in site/ folder). Deployed on Vercel. Visual redesign to match app style with pastel cards, sparkle icons, coral buttons. |
+| 2026-03-01 | Visual polish: colorful pastel gradient backgrounds, floating hearts/bows/sparkles/stars, hot pink squiggly border. Started v2 brainstorming for 3 new features (color slider, before/after illustrations, usage frequency). Paused mid-design. |

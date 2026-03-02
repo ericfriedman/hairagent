@@ -33,6 +33,8 @@ struct WelcomeView: View {
                 .frame(height: 60)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(AppTheme.background)
+        .background {
+            DecorativeBackground(style: .welcome)
+        }
     }
 }

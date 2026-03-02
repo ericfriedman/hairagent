@@ -13,11 +13,11 @@ struct QuizOptionCard: View {
                 .foregroundStyle(isSelected ? .white : AppTheme.textPrimary)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 20)
-                .background(isSelected ? accentColor : Color.gray.opacity(0.12))
+                .background(isSelected ? accentColor : .white.opacity(0.85))
                 .clipShape(RoundedRectangle(cornerRadius: 14))
                 .overlay(
                     RoundedRectangle(cornerRadius: 14)
-                        .stroke(isSelected ? accentColor : .clear, lineWidth: 3)
+                        .stroke(isSelected ? accentColor : AppTheme.pastelPink.opacity(0.3), lineWidth: isSelected ? 3 : 1.5)
                 )
         }
     }

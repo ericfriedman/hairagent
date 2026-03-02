@@ -42,3 +42,6 @@ This file tracks what Claude needs to know across sessions. Updated at the end o
 - Solutions must be easy to make at home with common products
 - Use SwiftUI-only types (no UIKit) since Package targets both iOS and macOS
 - Use `Color.gray.opacity(0.12)` instead of `Color(.systemGray6)`
+- Xcode project generated via xcodegen from project.yml -- run `xcodegen generate` after adding new Swift files
+- Cards on colored backgrounds use `.white.opacity(0.85-0.9)` instead of gray for visibility
+- AppTheme.hotPink = Color(red: 1.0, green: 0.0, blue: 0.5)

@@ -45,6 +45,8 @@ struct ResultsView: View {
                         .foregroundStyle(AppTheme.pastelCoral)
                         .padding(.vertical, 16)
                         .frame(maxWidth: 300)
+                        .background(.white.opacity(0.9))
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
                         .overlay(
                             RoundedRectangle(cornerRadius: 16)
                                 .stroke(AppTheme.pastelCoral, lineWidth: 2)
@@ -55,6 +57,8 @@ struct ResultsView: View {
             .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(AppTheme.background)
+        .background {
+            DecorativeBackground(style: .results)
+        }
     }
 }

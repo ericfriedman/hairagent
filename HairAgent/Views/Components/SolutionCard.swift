@@ -27,7 +27,7 @@ struct SolutionCard: View {
                     .lineLimit(2)
             }
             .padding()
-            .background(Color.gray.opacity(0.12))
+            .background(.white.opacity(0.9))
             .clipShape(RoundedRectangle(cornerRadius: 16))
         }
     }

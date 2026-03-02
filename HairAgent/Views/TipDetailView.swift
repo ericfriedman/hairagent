@@ -69,6 +69,8 @@ struct TipDetailView: View {
             .padding(24)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(AppTheme.background)
+        .background {
+            DecorativeBackground(style: .tipDetail)
+        }
     }
 }

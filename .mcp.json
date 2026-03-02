@@ -1,11 +1,12 @@
 {
   "mcpServers": {
     "XcodeBuildMCP": {
-      "command": "xcodebuildmcp",
-      "args": ["mcp"],
-      "env": {
-        "XCODEBUILDMCP_SENTRY_DISABLED": "true"
-      }
+      "type": "stdio",
+      "command": "/opt/homebrew/bin/xcodebuildmcp",
+      "args": [
+        "mcp"
+      ],
+      "env": {}
     }
   }
 }

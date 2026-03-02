@@ -20,6 +20,14 @@ enum QuizStep: Int, CaseIterable {
         case .goals: return "Pick at least 3"
         }
     }
+
+    var backgroundStyle: DecorativeBackground.Style {
+        switch self {
+        case .color: return .quizColor
+        case .texture: return .quizTexture
+        case .goals: return .quizGoals
+        }
+    }
 }
 
 struct QuizView: View {
@@ -77,7 +85,9 @@ struct QuizView: View {
             .padding(.bottom)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(AppTheme.background)
+        .background {
+            DecorativeBackground(style: step.backgroundStyle)
+        }
         .animation(.easeInOut(duration: 0.3), value: step)
     }
 
