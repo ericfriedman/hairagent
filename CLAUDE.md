@@ -22,9 +22,13 @@ Hair Agent is an iPad app conceived by an 11-year-old creator and built collabor
 - **2026-03-01:** Solutions must use common household ingredients only
 
 ## Design Direction
-- **Colors:** Pastel pink, pastel blue, pastel yellow, pastel coral, white backgrounds, black text
+- **Colors:** Pastel pink, pastel blue, pastel yellow, pastel coral, hot pink, white backgrounds, black text
 - **Vibe:** Bold, trendy, fun -- not childish. Fashion-forward, welcoming for all ages
 - **Font:** Clean, modern, highly readable
+- **Decorations:** Floating hearts, bows, sparkles, stars, scissors across all screens -- bold and visible
+- **Hot pink squiggly border** around every screen
+- **DecorativeBackground** component with per-screen pastel gradient styles
+- **BowView** custom component (ellipses + capsules for ribbon tails)
 
 ## Coding Standards
 - Swift Package with iOS 17 + macOS 14 targets
@@ -33,8 +37,14 @@ Hair Agent is an iPad app conceived by an 11-year-old creator and built collabor
 - AppTheme enum for all colors and fonts
 - Enums use `rawValue` strings for Codable/SwiftData compatibility
 
+## Writing Rules
+- NEVER use em dashes anywhere -- not in code, copy, docs, or comments
+
 ## Current Status
-- **Phase:** v1 implementation complete -- all views, models, data, and navigation built
-- **Last session:** 2026-03-01 - Built entire v1 app (15 tests passing)
+- **Phase:** v1 app polished with colorful UI + v2 features in brainstorming
+- **Last session:** 2026-03-01 - Added colorful backgrounds, decorations, squiggly border. Started brainstorming v2 features.
 - **Design doc:** docs/plans/2026-03-01-hair-agent-design.md
 - **Implementation plan:** docs/plans/2026-03-01-hair-agent-implementation.md
+- **Landing page design:** docs/plans/2026-03-01-landing-page-design.md
+- **Landing page plan:** docs/plans/2026-03-01-landing-page-implementation.md
+- **Landing page:** site/ folder (Next.js 16, Tailwind v4, shadcn/ui, deployed on Vercel)

@@ -39,10 +39,11 @@ Everyone -- kids, tweens, teens, and adults who want to learn hair care with at-
 2. [x] Brainstorming session - define the app concept
 3. [x] Implementation plan
 4. [x] Development (v1 -- all views, models, data, navigation)
-5. [ ] Content creation (more hair tips, real photos)
-6. [ ] Xcode project setup & on-device testing
-7. [ ] Polish & refinement
-8. [ ] App Store launch
+5. [x] Marketing landing page -- designed, built, deployed on Vercel
+6. [ ] Content creation (more hair tips, real photos)
+7. [ ] Xcode project setup & on-device testing
+8. [ ] Polish & refinement
+9. [ ] App Store launch
 
 ## Session Log
 | Date | What We Did |
@@ -50,3 +51,4 @@ Everyone -- kids, tweens, teens, and adults who want to learn hair care with at-
 | 2026-03-01 | Project setup, created repo and tracking files |
 | 2026-03-01 | Brainstorming complete -- defined app concept, chose SwiftUI, designed flow, locked in colors, wrote design doc |
 | 2026-03-01 | Built entire v1! 11 tasks, 15 tests passing. All screens working: welcome, name entry, 3-step quiz, results with 8 solutions, tip detail view |
+| 2026-03-01 | Built marketing landing page (Next.js + Tailwind + shadcn/ui in site/ folder). Deployed on Vercel. Visual redesign to match app style with pastel cards, sparkle icons, coral buttons. |
