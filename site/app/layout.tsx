@@ -5,11 +5,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hair Agent — Your Personal Hair Care Advisor",
+  title: "Hair Agent - Your Personal Hair Care Advisor",
   description:
     "Take a quick hair quiz and get personalized DIY hair care recipes using ingredients you already have at home.",
   openGraph: {
-    title: "Hair Agent — Meet Your New Hair BFF",
+    title: "Hair Agent - Meet Your New Hair BFF",
     description:
       "Personalized hair care tips from your kitchen. Take the quiz, get custom recipes.",
     type: "website",

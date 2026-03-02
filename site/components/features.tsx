@@ -3,7 +3,7 @@ import { Sparkle } from "./sparkle";
 const features = [
   {
     title: "All-Natural Ingredients",
-    description: "Honey, coconut oil, aloe vera — stuff from your kitchen.",
+    description: "Honey, coconut oil, aloe vera - stuff from your kitchen.",
     bgColor: "bg-ha-pink",
     sparkleColor: "#e8899a",
   },

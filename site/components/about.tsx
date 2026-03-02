@@ -14,7 +14,7 @@ export function About() {
         </h2>
         <p className="text-xl text-black/60 leading-relaxed">
           Hair Agent was dreamed up by an 11-year-old who believed everyone
-          deserves great hair care — not just people who can afford expensive
+          deserves great hair care - not just people who can afford expensive
           salon products. Together with her dad, she built an app that gives
           you personalized, all-natural hair tips using ingredients you
           already have at home. Real advice, from a real kid, for real hair.
