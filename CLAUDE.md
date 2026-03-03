@@ -41,10 +41,14 @@ Hair Agent is an iPad app conceived by an 11-year-old creator and built collabor
 - NEVER use em dashes anywhere -- not in code, copy, docs, or comments
 
 ## Current Status
-- **Phase:** v1 app polished with colorful UI + v2 features in brainstorming
-- **Last session:** 2026-03-01 - Added colorful backgrounds, decorations, squiggly border. Started brainstorming v2 features.
-- **Design doc:** docs/plans/2026-03-01-hair-agent-design.md
-- **Implementation plan:** docs/plans/2026-03-01-hair-agent-implementation.md
+- **Phase:** v2 development in progress (Task 1 of 14 complete)
+- **Branch:** `v2-features` (branched from main)
+- **Last session:** 2026-03-02 - Finished v2 brainstorming for all 3 features, wrote design docs and implementation plan, started building Task 1 (SelectedHairColor + HairColorGradient models). 27 tests passing.
+- **v1 design doc:** docs/plans/2026-03-01-hair-agent-design.md
+- **v1 implementation plan:** docs/plans/2026-03-01-hair-agent-implementation.md
+- **v2 features design:** docs/plans/2026-03-02-v2-features-design.md
+- **v2 usage frequency design:** docs/plans/2026-03-02-usage-frequency-design.md
+- **v2 implementation plan:** docs/plans/2026-03-02-v2-implementation.md
 - **Landing page design:** docs/plans/2026-03-01-landing-page-design.md
 - **Landing page plan:** docs/plans/2026-03-01-landing-page-implementation.md
 - **Landing page:** site/ folder (Next.js 16, Tailwind v4, shadcn/ui, deployed on Vercel)
