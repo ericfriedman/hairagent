@@ -65,3 +65,4 @@ Everyone -- kids, tweens, teens, and adults who want to learn hair care with at-
 | 2026-03-01 | Built marketing landing page (Next.js + Tailwind + shadcn/ui in site/ folder). Deployed on Vercel. Visual redesign to match app style with pastel cards, sparkle icons, coral buttons. |
 | 2026-03-01 | Visual polish: colorful pastel gradient backgrounds, floating hearts/bows/sparkles/stars, hot pink squiggly border. Started v2 brainstorming for 3 new features (color slider, before/after illustrations, usage frequency). Paused mid-design. |
 | 2026-03-02 | Finished v2 brainstorming for all 3 features. Wrote design docs and 14-task implementation plan. Started building on v2-features branch -- Task 1 complete (SelectedHairColor + HairColorGradient models, 27 tests passing). |
+| 2026-03-07 | Quick session: fixed Xcode build (restored @main to HairAgentApp.swift), got app running on iPad Pro 13-inch simulator. Reviewed v2 task list -- next up is Task 2. |

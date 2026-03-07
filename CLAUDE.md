@@ -43,7 +43,7 @@ Hair Agent is an iPad app conceived by an 11-year-old creator and built collabor
 ## Current Status
 - **Phase:** v2 development in progress (Task 1 of 14 complete)
 - **Branch:** `v2-features` (branched from main)
-- **Last session:** 2026-03-02 - Finished v2 brainstorming for all 3 features, wrote design docs and implementation plan, started building Task 1 (SelectedHairColor + HairColorGradient models). 27 tests passing.
+- **Last session:** 2026-03-07 - Restored `@main` to HairAgentApp.swift to fix Xcode build, got app running on iPad Pro 13-inch simulator. Reviewed v2 task list -- ready to start Task 2.
 - **v1 design doc:** docs/plans/2026-03-01-hair-agent-design.md
 - **v1 implementation plan:** docs/plans/2026-03-01-hair-agent-implementation.md
 - **v2 features design:** docs/plans/2026-03-02-v2-features-design.md
