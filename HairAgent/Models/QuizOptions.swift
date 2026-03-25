@@ -1,19 +1,5 @@
 import Foundation
 
-enum HairColor: String, CaseIterable, Codable, Identifiable {
-    case black, brown, blonde, red, gray, auburn
-    case other
-
-    var id: String { rawValue }
-
-    var displayName: String {
-        switch self {
-        case .other: return "Other"
-        default: return rawValue.capitalized
-        }
-    }
-}
-
 enum HairTexture: String, CaseIterable, Codable, Identifiable {
     case frizzy, oily, dry, damaged
     case other
@@ -51,5 +37,20 @@ enum HairGoal: String, CaseIterable, Codable, Identifiable {
         case .lessOil: return "Less Oil"
         case .other: return "Other"
         }
+    }
+}
+
+enum SolutionType: String, CaseIterable, Codable, Identifiable {
+    case moisturizing
+    case protein
+    case clarifying
+    case smoothing
+    case scalp
+    case strengthening
+
+    var id: String { rawValue }
+
+    var displayName: String {
+        rawValue.capitalized
     }
 }

@@ -4,7 +4,10 @@ import SwiftData
 @Model
 final class UserProfile {
     var name: String
-    var hairColorRaw: String?
+    var hairColorRed: Double?
+    var hairColorGreen: Double?
+    var hairColorBlue: Double?
+    var hairColorLabel: String?
     var hairTextureRaw: String?
     var hairGoalRaws: [String]
 
@@ -13,9 +16,19 @@ final class UserProfile {
         self.hairGoalRaws = []
     }
 
-    var hairColor: HairColor? {
-        get { hairColorRaw.flatMap { HairColor(rawValue: $0) } }
-        set { hairColorRaw = newValue?.rawValue }
+    var selectedHairColor: SelectedHairColor? {
+        get {
+            guard let r = hairColorRed, let g = hairColorGreen, let b = hairColorBlue, let label = hairColorLabel else {
+                return nil
+            }
+            return SelectedHairColor(red: r, green: g, blue: b, label: label)
+        }
+        set {
+            hairColorRed = newValue?.red
+            hairColorGreen = newValue?.green
+            hairColorBlue = newValue?.blue
+            hairColorLabel = newValue?.label
+        }
     }
 
     var hairTexture: HairTexture? {

@@ -41,9 +41,10 @@ Hair Agent is an iPad app conceived by an 11-year-old creator and built collabor
 - NEVER use em dashes anywhere -- not in code, copy, docs, or comments
 
 ## Current Status
-- **Phase:** v2 development in progress (Task 1 of 14 complete)
+- **Phase:** v2 COMPLETE, v3 brainstorming in progress
 - **Branch:** `v2-features` (branched from main)
-- **Last session:** 2026-03-07 - Restored `@main` to HairAgentApp.swift to fix Xcode build, got app running on iPad Pro 13-inch simulator. Reviewed v2 task list -- ready to start Task 2.
+- **Last session:** 2026-03-24 - Completed ALL 14 v2 tasks (gradient slider, before/after illustrations, frequency schedule, My Schedule tab). Added Enter key support to all screens. Started v3 brainstorming -- monthly calendar schedule, badge system, real hair photos. Mockups approved. Need to write design doc and implementation plan next session.
+- **Next session:** Resume v3 brainstorm -- write design doc, then implementation plan. Fix button double-tap lag. More confetti on badge celebration popup.
 - **v1 design doc:** docs/plans/2026-03-01-hair-agent-design.md
 - **v1 implementation plan:** docs/plans/2026-03-01-hair-agent-implementation.md
 - **v2 features design:** docs/plans/2026-03-02-v2-features-design.md
@@ -52,3 +53,9 @@ Hair Agent is an iPad app conceived by an 11-year-old creator and built collabor
 - **Landing page design:** docs/plans/2026-03-01-landing-page-design.md
 - **Landing page plan:** docs/plans/2026-03-01-landing-page-implementation.md
 - **Landing page:** site/ folder (Next.js 16, Tailwind v4, shadcn/ui, deployed on Vercel)
+
+## v3 Features (brainstorming -- approved but not yet specced)
+1. **Monthly calendar schedule** -- 12-month list, tap to open real calendar grid with days. Activities: wash days, mask days, trim reminders, scalp care, heat-free days, protective style days. Schedule personalized to user's hair type.
+2. **Badge achievement system** -- earn badges by completing a full week of schedule. Badge themes mostly based on hair type/goals (Moisture Queen, Frizz Fighter, Shine Star, etc.) with some activity-based ones (Mask Master). Badge trophy shelf screen. Confetti celebration popup when earned (lots of confetti!).
+3. **Real hair photos** -- replace SwiftUI shape illustrations with real photos. 4 before photos (one per texture: frizzy, oily, dry, damaged) + 4 after photos. Color-tinted to match user's gradient slider selection. Need to source/create 8 photos.
+4. **Fix button double-tap lag** -- buttons require two taps, likely animation-related

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TipDetailView: View {
     let solution: HairSolution
+    let texture: HairTexture
     var onBack: () -> Void
 
     var body: some View {
@@ -65,12 +66,19 @@ struct TipDetailView: View {
                         }
                     }
                 }
+
+                HowOftenSection(solution: solution, texture: texture)
+                    .padding(.top, 8)
             }
             .padding(24)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background {
             DecorativeBackground(style: .tipDetail)
+        }
+        .onKeyPress(.escape) {
+            onBack()
+            return .handled
         }
     }
 }

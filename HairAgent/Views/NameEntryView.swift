@@ -23,6 +23,9 @@ struct NameEntryView: View {
                         .stroke(AppTheme.pastelPink.opacity(0.5), lineWidth: 2)
                 )
                 .multilineTextAlignment(.center)
+                .onSubmit {
+                    if !name.isEmpty { onContinue(name) }
+                }
 
             Button(action: { onContinue(name) }) {
                 Text("Continue")

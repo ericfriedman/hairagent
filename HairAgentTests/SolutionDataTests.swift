@@ -28,4 +28,35 @@ final class SolutionDataTests: XCTestCase {
         let results = HairSolutionsData.solutions(for: .dry, goals: [.addShine])
         XCTAssertFalse(results.isEmpty)
     }
+
+    func test_every_solution_has_a_solution_type() {
+        for solution in HairSolutionsData.allSolutions {
+            XCTAssertFalse(solution.solutionType.rawValue.isEmpty, "\(solution.title) has no solution type")
+        }
+    }
+
+    func test_every_solution_has_default_frequency() {
+        for solution in HairSolutionsData.allSolutions {
+            XCTAssertFalse(solution.defaultFrequency.isEmpty, "\(solution.title) has no default frequency")
+        }
+    }
+
+    func test_every_solution_has_overuse_warning() {
+        for solution in HairSolutionsData.allSolutions {
+            XCTAssertFalse(solution.overuseWarning.isEmpty, "\(solution.title) has no overuse warning")
+            XCTAssertNotEqual(solution.overuseWarning, "Placeholder", "\(solution.title) still has placeholder overuse warning")
+        }
+    }
+
+    func test_every_solution_has_frequency_for_all_textures() {
+        let textures: [HairTexture] = [.frizzy, .oily, .dry, .damaged]
+        for solution in HairSolutionsData.allSolutions {
+            for texture in textures {
+                XCTAssertNotNil(
+                    solution.frequencyByTexture[texture],
+                    "\(solution.title) missing frequency for \(texture.rawValue)"
+                )
+            }
+        }
+    }
 }

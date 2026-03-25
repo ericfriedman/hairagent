@@ -50,11 +50,14 @@ Everyone -- kids, tweens, teens, and adults who want to learn hair care with at-
 6. [x] Xcode project setup & simulator testing
 7. [x] Visual polish (colorful backgrounds, decorations, squiggly border)
 8. [x] v2 feature brainstorming & design (all 3 features designed and approved)
-9. [ ] v2 development (in progress -- Task 1 of 14 complete, on v2-features branch)
-10. [ ] Content creation (more hair tips, real photos)
-11. [ ] On-device testing
-12. [ ] Final polish & refinement
-13. [ ] App Store launch
+9. [x] v2 development (COMPLETE -- all 14 tasks done, gradient slider, before/after, schedule tab, frequency)
+10. [ ] v3 brainstorming (in progress -- monthly calendar, badges, real hair photos approved in concept)
+11. [ ] v3 design doc & implementation plan
+12. [ ] v3 development
+13. [ ] Content creation (real hair photos for before/after -- 8 photos needed)
+14. [ ] On-device testing
+15. [ ] Final polish & refinement
+16. [ ] App Store launch
 
 ## Session Log
 | Date | What We Did |
@@ -66,3 +69,4 @@ Everyone -- kids, tweens, teens, and adults who want to learn hair care with at-
 | 2026-03-01 | Visual polish: colorful pastel gradient backgrounds, floating hearts/bows/sparkles/stars, hot pink squiggly border. Started v2 brainstorming for 3 new features (color slider, before/after illustrations, usage frequency). Paused mid-design. |
 | 2026-03-02 | Finished v2 brainstorming for all 3 features. Wrote design docs and 14-task implementation plan. Started building on v2-features branch -- Task 1 complete (SelectedHairColor + HairColorGradient models, 27 tests passing). |
 | 2026-03-07 | Quick session: fixed Xcode build (restored @main to HairAgentApp.swift), got app running on iPad Pro 13-inch simulator. Reviewed v2 task list -- next up is Task 2. |
+| 2026-03-24 | Completed ALL v2 tasks (2-14)! Gradient color slider, before/after hair illustrations, frequency data for all 8 solutions, My Schedule tab with frequency badges, How Often section in detail view. Added Enter key support. 33 tests passing. Started v3 brainstorming -- monthly calendar schedule, badge achievements with confetti, real hair photos. Mockups approved. |

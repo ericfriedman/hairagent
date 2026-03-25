@@ -10,7 +10,8 @@ let package = Package(
     targets: [
         .target(
             name: "HairAgent",
-            path: "HairAgent"
+            path: "HairAgent",
+            exclude: ["HairAgentApp.swift"]
         ),
         .testTarget(
             name: "HairAgentTests",

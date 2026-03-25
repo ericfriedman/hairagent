@@ -66,6 +66,7 @@ struct DecorativeBackground: View {
         case quizGoals
         case results
         case tipDetail
+        case mySchedule
 
         var gradientColors: [Color] {
             switch self {
@@ -83,11 +84,13 @@ struct DecorativeBackground: View {
                 [AppTheme.pastelCoral.opacity(0.45), AppTheme.pastelYellow.opacity(0.4), AppTheme.pastelPink.opacity(0.35)]
             case .tipDetail:
                 [AppTheme.pastelPink.opacity(0.35), AppTheme.pastelBlue.opacity(0.25)]
+            case .mySchedule:
+                [AppTheme.pastelBlue.opacity(0.45), AppTheme.pastelPink.opacity(0.35), AppTheme.pastelYellow.opacity(0.3)]
             }
         }
 
         var hasExtraDecorations: Bool {
-            self == .welcome || self == .results
+            self == .welcome || self == .results || self == .mySchedule
         }
     }
 

@@ -15,7 +15,7 @@ enum QuizStep: Int, CaseIterable {
 
     var subtitle: String {
         switch self {
-        case .color: return "Pick the closest match"
+        case .color: return "Drag to find your color"
         case .texture: return "Choose your hair texture"
         case .goals: return "Pick at least 3"
         }
@@ -32,12 +32,12 @@ enum QuizStep: Int, CaseIterable {
 
 struct QuizView: View {
     @State private var step: QuizStep = .color
-    @State private var selectedColor: HairColor?
+    @State private var selectedColor: SelectedHairColor?
     @State private var selectedTexture: HairTexture?
     @State private var selectedGoals: Set<HairGoal> = []
 
     var onBack: () -> Void
-    var onComplete: (HairColor, HairTexture, [HairGoal]) -> Void
+    var onComplete: (SelectedHairColor, HairTexture, [HairGoal]) -> Void
 
     var body: some View {
         VStack(spacing: 24) {
@@ -89,21 +89,16 @@ struct QuizView: View {
             DecorativeBackground(style: step.backgroundStyle)
         }
         .animation(.easeInOut(duration: 0.3), value: step)
+        .onKeyPress(.return) {
+            guard canProceed else { return .ignored }
+            goNext()
+            return .handled
+        }
     }
 
     private var colorGrid: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 160))], spacing: 16) {
-            ForEach(HairColor.allCases) { color in
-                QuizOptionCard(
-                    label: color.displayName,
-                    isSelected: selectedColor == color,
-                    accentColor: AppTheme.pastelPink
-                ) {
-                    selectedColor = color
-                }
-            }
-        }
-        .padding(.horizontal)
+        GradientSliderView(selectedColor: $selectedColor)
+            .padding(.top, 20)
     }
 
     private var textureGrid: some View {

@@ -25,7 +25,7 @@ enum AppScreen: Equatable {
 struct ContentView: View {
     @State private var currentScreen: AppScreen = .welcome
     @State private var userName: String = ""
-    @State private var selectedColor: HairColor?
+    @State private var selectedColor: SelectedHairColor?
     @State private var selectedTexture: HairTexture?
     @State private var selectedGoals: [HairGoal] = []
     @State private var matchedSolutions: [HairSolution] = []
@@ -66,6 +66,8 @@ struct ContentView: View {
                 ResultsView(
                     userName: userName,
                     solutions: matchedSolutions,
+                    selectedHairColor: selectedColor,
+                    selectedTexture: selectedTexture,
                     onSelectSolution: { solution in
                         currentScreen = .tipDetail(solution)
                     },
@@ -75,7 +77,10 @@ struct ContentView: View {
                 )
 
             case .tipDetail(let solution):
-                TipDetailView(solution: solution) {
+                TipDetailView(
+                    solution: solution,
+                    texture: selectedTexture ?? .other
+                ) {
                     currentScreen = .results
                 }
             }

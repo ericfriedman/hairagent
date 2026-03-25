@@ -36,5 +36,9 @@ struct WelcomeView: View {
         .background {
             DecorativeBackground(style: .welcome)
         }
+        .onKeyPress(.return) {
+            onGetStarted()
+            return .handled
+        }
     }
 }
