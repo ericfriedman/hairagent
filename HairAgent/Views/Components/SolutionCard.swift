@@ -10,16 +10,13 @@ struct SolutionCard: View {
     var body: some View {
         Button(action: onTap) {
             VStack(alignment: .leading, spacing: 12) {
-                if let hairColor = hairColor, let texture = texture {
-                    BeforeAfterView(
-                        hairColor: hairColor,
+                if let texture = texture {
+                    BeforeAfterPhotos(
                         texture: texture,
-                        solutionType: solution.solutionType,
-                        size: CGSize(width: 260, height: 140)
+                        hairColor: hairColor
                     )
                     .frame(maxWidth: .infinity)
-                    .frame(height: 140)
-                    .background(accentColor.opacity(0.15))
+                    .frame(height: 180)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                 } else {
                     RoundedRectangle(cornerRadius: 12)
@@ -44,6 +41,47 @@ struct SolutionCard: View {
             .padding()
             .background(.white.opacity(0.9))
             .clipShape(RoundedRectangle(cornerRadius: 16))
+        }
+    }
+}
+
+// MARK: - Before/After Photo Pair
+
+struct BeforeAfterPhotos: View {
+    let texture: HairTexture
+    let hairColor: Color?
+
+    private var textureKey: String {
+        switch texture {
+        case .frizzy: return "frizzy"
+        case .oily: return "oily"
+        case .dry: return "dry"
+        case .damaged: return "damaged"
+        case .other: return "frizzy"
+        }
+    }
+
+    var body: some View {
+        HStack(spacing: 2) {
+            photoView(imageName: "\(textureKey)_before", label: "Before")
+            photoView(imageName: "\(textureKey)_after", label: "After")
+        }
+    }
+
+    @ViewBuilder
+    private func photoView(imageName: String, label: String) -> some View {
+        VStack(spacing: 4) {
+            Image(imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: .infinity)
+                .frame(height: 150)
+                .colorMultiply(hairColor ?? .white)
+                .clipped()
+
+            Text(label)
+                .font(AppTheme.headingFont(size: 11))
+                .foregroundStyle(.gray)
         }
     }
 }
