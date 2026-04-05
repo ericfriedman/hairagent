@@ -12,7 +12,7 @@ struct WelcomeView: View {
                     .font(AppTheme.headingFont(size: 48))
                     .foregroundStyle(AppTheme.textPrimary)
 
-                Text("Your personal hair care advisor")
+                Text("We care for your hair")
                     .font(AppTheme.bodyFont(size: 20))
                     .foregroundStyle(.gray)
             }
