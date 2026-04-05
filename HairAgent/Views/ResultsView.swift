@@ -2,6 +2,8 @@ import SwiftUI
 
 enum ResultsTab {
     case solutions
+    case calendar
+    case badges
     case schedule
 }
 
@@ -10,8 +12,10 @@ struct ResultsView: View {
     let solutions: [HairSolution]
     let selectedHairColor: SelectedHairColor?
     let selectedTexture: HairTexture?
+    let earnedBadges: [EarnedBadge]
     var onSelectSolution: (HairSolution) -> Void
     var onRetakeQuiz: () -> Void
+    var onSelectMonth: (Int, Int) -> Void
 
     @State private var selectedTab: ResultsTab = .solutions
 
@@ -33,6 +37,15 @@ struct ResultsView: View {
                 switch selectedTab {
                 case .solutions:
                     solutionsContent
+                case .calendar:
+                    MonthListView(
+                        texture: selectedTexture ?? .other,
+                        solutions: solutions,
+                        earnedBadges: earnedBadges,
+                        onSelectMonth: onSelectMonth
+                    )
+                case .badges:
+                    BadgeTrophyShelfView(earnedBadges: earnedBadges)
                 case .schedule:
                     MyScheduleView(
                         solutions: solutions,
@@ -60,15 +73,26 @@ struct ResultsView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background {
-            DecorativeBackground(style: selectedTab == .solutions ? .results : .mySchedule)
+            DecorativeBackground(style: backgroundStyle)
         }
         .animation(.easeInOut(duration: 0.3), value: selectedTab)
     }
 
+    private var backgroundStyle: DecorativeBackground.Style {
+        switch selectedTab {
+        case .solutions: return .results
+        case .calendar: return .calendar
+        case .badges: return .badges
+        case .schedule: return .mySchedule
+        }
+    }
+
     private var tabBar: some View {
         HStack(spacing: 0) {
-            tabButton("My Solutions", tab: .solutions)
-            tabButton("My Schedule", tab: .schedule)
+            tabButton("Solutions", tab: .solutions)
+            tabButton("Calendar", tab: .calendar)
+            tabButton("Badges", tab: .badges)
+            tabButton("Schedule", tab: .schedule)
         }
         .background(.white.opacity(0.7))
         .clipShape(RoundedRectangle(cornerRadius: 14))
@@ -81,7 +105,7 @@ struct ResultsView: View {
     private func tabButton(_ label: String, tab: ResultsTab) -> some View {
         Button(action: { selectedTab = tab }) {
             Text(label)
-                .font(AppTheme.headingFont(size: 16))
+                .font(AppTheme.headingFont(size: 15))
                 .foregroundStyle(selectedTab == tab ? .white : AppTheme.textPrimary)
                 .padding(.vertical, 12)
                 .frame(maxWidth: .infinity)
