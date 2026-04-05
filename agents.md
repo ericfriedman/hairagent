@@ -27,6 +27,21 @@ This file tracks what Claude needs to know across sessions. Updated at the end o
   3. **Real hair photos** -- replace drawn shapes with actual photos. 4 before (per texture) + 4 after, color-tinted to gradient slider selection. Need to source 8 photos.
   4. **Fix button double-tap lag** -- animation eating first tap.
   - Visual mockups created and approved in .superpowers/brainstorm/ folder. Next: write design doc and implementation plan.
+- **2026-04-05:** v3 BUILD SESSION! Wrote implementation plan (10 tasks). Built ALL v3 features:
+  1. ScheduleModels (ScheduleActivityType, DaySchedule, ScheduleGenerator) + 7 tests
+  2. BadgeModels (9 BadgeTypes, EarnedBadge) + 4 tests
+  3. MonthListView (12-month scrollable card list, current month highlighted)
+  4. MonthCalendarView (7-column grid, activity emojis, tap-to-complete days, badge earning)
+  5. ConfettiView (40 animated emoji particles)
+  6. BadgeCelebrationView (confetti popup overlay)
+  7. BadgeTrophyShelfView (3-column badge grid, earned/locked states)
+  8. Fixed button double-tap lag (replaced .animation with withAnimation)
+  9. Wired everything into ResultsView (3 tabs: Solutions | Schedule | Badges) + ContentView
+  10. Real before/after hair photos! 8 AI-generated images (ChatGPT). Woman from back, silver-gray hair, white shirt. Split composites into individual assets. Color-tinted with .blendMode(.color) -- only tints hair, not background/shirt.
+  - Updated tagline to "We care for your hair"
+  - Removed redundant old Schedule tab (Calendar IS the schedule)
+  - Made calendar emojis bigger for readability (18px in cells, 20px in legend)
+  - 44 tests passing. App running on iPad Pro 13-inch simulator.
 - **2026-03-07:** Quick session -- restored `@main` attribute to HairAgentApp.swift (was removed for swift test compat, broke Xcode build). Got app building and running on iPad Pro 13-inch (M5) simulator (iOS 26.2). Reviewed v2 task list, ready to start Task 2 next session.
 - **2026-03-02:** Finished brainstorming all 3 v2 features! Key design decisions:
   - **Gradient slider:** Natural colors (black to platinum) + rainbow section at the end for dyed hair (pink, blue, purple, etc.). Color-filled draggable circle thumb with white border. Label updates as you drag. Replaces card picker, removes "Other" option.
@@ -37,12 +52,13 @@ This file tracks what Claude needs to know across sessions. Updated at the end o
   - Started development on `v2-features` branch. Task 1 complete (SelectedHairColor + HairColorGradient models, 12 new tests). 27 tests total passing.
 
 ## Open Questions
-- Image assets / photography for solution cards (currently using placeholder sparkle icons)
 - Local persistence with SwiftData (models ready, but ContentView uses @State for now)
+- Badge/schedule completion persistence (currently @State, resets on app restart)
 - More hair solutions to add beyond the initial 8
 - App icon design
 - Vercel deployment protection -- needs disabling for public access
 - Custom domain for the landing page
+- Polish pass on hair photo color tinting (test with all slider colors)
 
 ## Things to Remember
 - NEVER use em dashes anywhere
@@ -58,11 +74,16 @@ This file tracks what Claude needs to know across sessions. Updated at the end o
 - Xcode project generated via xcodegen from project.yml -- run `xcodegen generate` after adding new Swift files
 - Cards on colored backgrounds use `.white.opacity(0.85-0.9)` instead of gray for visibility
 - AppTheme.hotPink = Color(red: 1.0, green: 0.0, blue: 0.5)
-- v2 COMPLETE on `v2-features` branch -- all 14 tasks done, 33 tests passing
+- v2 COMPLETE + v3 MOSTLY COMPLETE on `v2-features` branch -- 44 tests passing
 - v2 implementation plan: docs/plans/2026-03-02-v2-implementation.md
+- v3 implementation plan: docs/plans/2026-04-05-v3-calendar-badges.md
 - Package.swift excludes HairAgentApp.swift so swift test works; Xcode uses its own project file
 - xcodegen regenerated after adding new files -- run `xcodegen generate` after adding new Swift files
-- v3 brainstorming in progress -- mockups approved, need design doc + implementation plan
 - v3 mockups in .superpowers/brainstorm/ folder
 - Enter/Return key support added to Welcome, NameEntry, QuizView; Escape on TipDetailView
 - Old HairColor enum removed -- app uses SelectedHairColor (gradient-based) everywhere now
+- Tagline: "We care for your hair"
+- 3 tabs on results: Solutions | Schedule | Badges (old separate Schedule tab removed)
+- Before/after photos: 8 images in Assets.xcassets, originals in collateral/ folder
+- Photos use .blendMode(.color) for tinting -- only hair gets colored, not background/shirt
+- Calendar emojis sized at 18px (cells) and 20px (legend) for readability

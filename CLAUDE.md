@@ -41,21 +41,24 @@ Hair Agent is an iPad app conceived by an 11-year-old creator and built collabor
 - NEVER use em dashes anywhere -- not in code, copy, docs, or comments
 
 ## Current Status
-- **Phase:** v2 COMPLETE, v3 brainstorming in progress
+- **Phase:** v3 MOSTLY COMPLETE, polish remaining
 - **Branch:** `v2-features` (branched from main)
-- **Last session:** 2026-03-24 - Completed ALL 14 v2 tasks (gradient slider, before/after illustrations, frequency schedule, My Schedule tab). Added Enter key support to all screens. Started v3 brainstorming -- monthly calendar schedule, badge system, real hair photos. Mockups approved. Need to write design doc and implementation plan next session.
-- **Next session:** Resume v3 brainstorm -- write design doc, then implementation plan. Fix button double-tap lag. More confetti on badge celebration popup.
+- **Last session:** 2026-04-05 - Built ALL v3 features! Monthly calendar schedule (12-month list + calendar grid with personalized activities). Badge achievement system (9 badges, trophy shelf, confetti celebration popup). Real before/after hair photos with color tinting (blend mode). Fixed button double-tap lag. Updated tagline to "We care for your hair". Removed redundant Schedule tab (Calendar IS the schedule now). Made calendar emojis bigger for readability. 44 tests passing.
+- **Next session:** Test and polish the color tinting on hair photos (verify it looks right with different colors). Consider if before/after photos need more refinement. General polish pass. Maybe merge v2-features to main.
 - **v1 design doc:** docs/plans/2026-03-01-hair-agent-design.md
 - **v1 implementation plan:** docs/plans/2026-03-01-hair-agent-implementation.md
 - **v2 features design:** docs/plans/2026-03-02-v2-features-design.md
 - **v2 usage frequency design:** docs/plans/2026-03-02-usage-frequency-design.md
 - **v2 implementation plan:** docs/plans/2026-03-02-v2-implementation.md
+- **v3 implementation plan:** docs/plans/2026-04-05-v3-calendar-badges.md
 - **Landing page design:** docs/plans/2026-03-01-landing-page-design.md
 - **Landing page plan:** docs/plans/2026-03-01-landing-page-implementation.md
 - **Landing page:** site/ folder (Next.js 16, Tailwind v4, shadcn/ui, deployed on Vercel)
 
-## v3 Features (brainstorming -- approved but not yet specced)
-1. **Monthly calendar schedule** -- 12-month list, tap to open real calendar grid with days. Activities: wash days, mask days, trim reminders, scalp care, heat-free days, protective style days. Schedule personalized to user's hair type.
-2. **Badge achievement system** -- earn badges by completing a full week of schedule. Badge themes mostly based on hair type/goals (Moisture Queen, Frizz Fighter, Shine Star, etc.) with some activity-based ones (Mask Master). Badge trophy shelf screen. Confetti celebration popup when earned (lots of confetti!).
-3. **Real hair photos** -- replace SwiftUI shape illustrations with real photos. 4 before photos (one per texture: frizzy, oily, dry, damaged) + 4 after photos. Color-tinted to match user's gradient slider selection. Need to source/create 8 photos.
-4. **Fix button double-tap lag** -- buttons require two taps, likely animation-related
+## v3 Features (BUILT)
+1. **Monthly calendar schedule** -- DONE. 12-month list, tap to open calendar grid. Activities: wash days, mask days, trim reminders, scalp care, heat-free days, protective style days. Personalized to hair type. Tap days to mark complete.
+2. **Badge achievement system** -- DONE. 9 badges (Moisture Queen, Frizz Fighter, Shine Star, Scalp Guru, Strength Boss, Mask Master, Consistency Champ, Heat-Free Hero, Protective Pro). Trophy shelf with earned/locked states. Confetti celebration popup. Earn by completing 7 days.
+3. **Real hair photos** -- DONE. 8 AI-generated photos (ChatGPT). Woman from back in white shirt, silver-gray hair. Color-tinted with .blendMode(.color) to match gradient slider selection. Photos in collateral/ folder, assets in Assets.xcassets.
+4. **Fix button double-tap lag** -- DONE. Replaced .animation modifier with withAnimation in closures.
+5. **Tagline** -- Updated to "We care for your hair"
+6. **Tab cleanup** -- Removed old Schedule tab, renamed Calendar to Schedule (3 tabs: Solutions | Schedule | Badges)

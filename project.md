@@ -36,10 +36,18 @@ Everyone -- kids, tweens, teens, and adults who want to learn hair care with at-
 - SwiftData (local storage)
 - No backend
 
-## Features (v2 -- designed, development started)
+## Features (v2 -- COMPLETE)
 1. Hair color gradient slider (natural colors + rainbow for dyed hair, draggable with color label)
-2. Before/after hair illustrations on results cards (SwiftUI Shape strands per texture + solution type, glow effect)
-3. Usage frequency recommendations per recipe (My Schedule tab, frequency badges, How Often detail section, overuse warnings)
+2. Before/after hair illustrations on results cards
+3. Usage frequency recommendations per recipe (frequency badges, How Often detail section, overuse warnings)
+
+## Features (v3 -- MOSTLY COMPLETE)
+1. Monthly calendar schedule (12-month list + calendar grid, personalized activities, tap to complete days)
+2. Badge achievement system (9 badges, trophy shelf, confetti celebration popup)
+3. Real before/after hair photos (AI-generated, color-tinted to match gradient slider selection)
+4. Button double-tap lag fix
+5. Tagline: "We care for your hair"
+6. 3-tab layout: Solutions | Schedule | Badges
 
 ## Milestones
 1. [x] Project setup & GitHub repo
@@ -51,13 +59,14 @@ Everyone -- kids, tweens, teens, and adults who want to learn hair care with at-
 7. [x] Visual polish (colorful backgrounds, decorations, squiggly border)
 8. [x] v2 feature brainstorming & design (all 3 features designed and approved)
 9. [x] v2 development (COMPLETE -- all 14 tasks done, gradient slider, before/after, schedule tab, frequency)
-10. [ ] v3 brainstorming (in progress -- monthly calendar, badges, real hair photos approved in concept)
-11. [ ] v3 design doc & implementation plan
-12. [ ] v3 development
-13. [ ] Content creation (real hair photos for before/after -- 8 photos needed)
-14. [ ] On-device testing
-15. [ ] Final polish & refinement
-16. [ ] App Store launch
+10. [x] v3 brainstorming (monthly calendar, badges, real hair photos approved)
+11. [x] v3 design doc & implementation plan
+12. [x] v3 development (calendar schedule, badge system, confetti, real photos, double-tap fix)
+13. [x] Content creation (8 AI-generated hair photos, color-tinted in app)
+14. [ ] Polish pass (verify color tinting, test all slider colors)
+15. [ ] On-device testing
+16. [ ] Final polish & refinement
+17. [ ] App Store launch
 
 ## Session Log
 | Date | What We Did |
@@ -70,3 +79,4 @@ Everyone -- kids, tweens, teens, and adults who want to learn hair care with at-
 | 2026-03-02 | Finished v2 brainstorming for all 3 features. Wrote design docs and 14-task implementation plan. Started building on v2-features branch -- Task 1 complete (SelectedHairColor + HairColorGradient models, 27 tests passing). |
 | 2026-03-07 | Quick session: fixed Xcode build (restored @main to HairAgentApp.swift), got app running on iPad Pro 13-inch simulator. Reviewed v2 task list -- next up is Task 2. |
 | 2026-03-24 | Completed ALL v2 tasks (2-14)! Gradient color slider, before/after hair illustrations, frequency data for all 8 solutions, My Schedule tab with frequency badges, How Often section in detail view. Added Enter key support. 33 tests passing. Started v3 brainstorming -- monthly calendar schedule, badge achievements with confetti, real hair photos. Mockups approved. |
+| 2026-04-05 | Built ALL v3 features! Monthly calendar schedule (12-month list + calendar grid), badge system (9 badges, trophy shelf, confetti popup), real before/after hair photos (AI-generated, color-tinted with blend mode). Fixed double-tap lag. Tagline: "We care for your hair". Cleaned up to 3 tabs (Solutions, Schedule, Badges). Bigger calendar emojis. 44 tests passing. |
