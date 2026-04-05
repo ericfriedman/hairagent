@@ -4,7 +4,6 @@ enum ResultsTab {
     case solutions
     case calendar
     case badges
-    case schedule
 }
 
 struct ResultsView: View {
@@ -46,12 +45,6 @@ struct ResultsView: View {
                     )
                 case .badges:
                     BadgeTrophyShelfView(earnedBadges: earnedBadges)
-                case .schedule:
-                    MyScheduleView(
-                        solutions: solutions,
-                        texture: selectedTexture ?? .other,
-                        onSelectSolution: onSelectSolution
-                    )
                 }
 
                 Button(action: onRetakeQuiz) {
@@ -83,16 +76,14 @@ struct ResultsView: View {
         case .solutions: return .results
         case .calendar: return .calendar
         case .badges: return .badges
-        case .schedule: return .mySchedule
         }
     }
 
     private var tabBar: some View {
         HStack(spacing: 0) {
             tabButton("Solutions", tab: .solutions)
-            tabButton("Calendar", tab: .calendar)
+            tabButton("Schedule", tab: .calendar)
             tabButton("Badges", tab: .badges)
-            tabButton("Schedule", tab: .schedule)
         }
         .background(.white.opacity(0.7))
         .clipShape(RoundedRectangle(cornerRadius: 14))
