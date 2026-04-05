@@ -104,22 +104,22 @@ struct MonthCalendarView: View {
                     .foregroundStyle(isToday ? AppTheme.hotPink : AppTheme.textPrimary)
 
                 if !daySchedule.activities.isEmpty {
-                    VStack(spacing: 1) {
+                    VStack(spacing: 2) {
                         ForEach(Array(daySchedule.activities.prefix(2).enumerated()), id: \.offset) { _, activity in
                             Text(activity.emoji)
-                                .font(.system(size: 10))
+                                .font(.system(size: 18))
                         }
                     }
                 }
 
                 if isCompleted {
                     Image(systemName: "checkmark.circle.fill")
-                        .font(.system(size: 10))
+                        .font(.system(size: 14))
                         .foregroundStyle(.green)
                 }
             }
             .frame(maxWidth: .infinity)
-            .frame(height: 72)
+            .frame(height: 88)
             .background(
                 hasMask
                     ? Color(red: 1.0, green: 0.94, blue: 0.96)
@@ -187,18 +187,18 @@ struct MonthCalendarView: View {
     }
 
     private var legendView: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 3), spacing: 8) {
+        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 3), spacing: 10) {
             ForEach(ScheduleActivityType.allCases) { activity in
-                HStack(spacing: 4) {
+                HStack(spacing: 6) {
                     Text(activity.emoji)
-                        .font(.system(size: 12))
+                        .font(.system(size: 20))
                     Text(activity.displayName)
-                        .font(AppTheme.bodyFont(size: 11))
+                        .font(AppTheme.bodyFont(size: 15))
                 }
-                .padding(.horizontal, 8)
-                .padding(.vertical, 5)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 8)
                 .background(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             }
         }
         .padding(.horizontal)

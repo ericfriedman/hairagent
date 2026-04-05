@@ -71,13 +71,25 @@ struct BeforeAfterPhotos: View {
     @ViewBuilder
     private func photoView(imageName: String, label: String) -> some View {
         VStack(spacing: 4) {
-            Image(imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: .infinity)
-                .frame(height: 150)
-                .colorMultiply(hairColor ?? .white)
-                .clipped()
+            ZStack {
+                // Base: original image
+                Image(imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 150)
+                    .clipped()
+
+                // Color overlay using .sourceAtop to tint only non-white areas
+                // The .color blend mode recolors with our hue while keeping luminance
+                if let hairColor = hairColor {
+                    Rectangle()
+                        .fill(hairColor)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 150)
+                        .blendMode(.color)
+                }
+            }
 
             Text(label)
                 .font(AppTheme.headingFont(size: 11))
